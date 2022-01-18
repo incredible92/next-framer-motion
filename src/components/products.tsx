@@ -1,36 +1,39 @@
-import Link from 'next/link';
-import React from 'react'
-import styles from "../styles/Home.module.css";
-import { products } from '../utils/product';
-import Image from 'next/image';
+import Link from "next/link";
+import React from "react";
+import styles from "../../styles/Home.module.css";
+import { products } from "../utils/product";
+import Image from "next/image";
 
 const Products = () => {
   return (
     <>
-   
-    <div>
-      <h1>Select a  products</h1>
-    </div>
-    <div>
-      {
-        products.map((product, index) => (
+      <div>
+        <h1>Select a products</h1>
+      </div>
+      <div>
+        {products.map((product, index) => (
           // eslint-disable-next-line @next/next/link-passhref
-          <Link key={index} href={''}>
-            <div className="card">
-              <span className='drugs'>Pharmaceutical product</span>
-              <Image key={product.images} src={product.images} alt="product-image" width={550} height={350} />
-              <div className="products-info">
+          <Link key={index} href={""}>
+            <div className={styles.card}>
+              {/* <span className='drugs'>Pharmaceutical product</span> */}
+
+              <div className={styles.productInfo}>
+                <Image
+                  // key={index}
+                  src={product.images}
+                  alt={"product" + (index + 1)}
+                  width={550}
+                  height={350}
+                />
                 <h2>{product.name}</h2>
                 <span>{product.price}</span>
               </div>
             </div>
           </Link>
-        ))
-      }
-    </div>
+        ))}
+      </div>
     </>
-  )
-}
+  );
+};
 
-
-export default Products
+export default Products;

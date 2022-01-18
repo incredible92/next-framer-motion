@@ -1,15 +1,16 @@
 export const products = [
   {
     images: "/images/product1.png",
-    name:  "antibiotics",
-    price: "$300",
+    name:  "Mission pharma",
+   
+    price: "$700",
     
   },
   
   {
-    images: "/images/product2.png",
-    name:  "mission pharma",
-    price: "$200",
+    images: "/images/product2.jpg",
+    name:  "Antibiotics",
+    price: "$400",
     
   },
 ]
