@@ -1,7 +1,6 @@
 .container {
-  background-color: gray;
-  color: white;
-  height: 30rem;
+  margin: 2rem auto;
+  cursor: pointer;
   width: 30rem;
-  padding: 3rem;
+ 
 }
