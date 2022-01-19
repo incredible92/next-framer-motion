@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 const Products = () => {
   const [productDetail, setProductDetail] = useState("");
-  
+
   const productToShow = products.find(
     (product) => product.name === productDetail
   );
@@ -15,14 +15,14 @@ const Products = () => {
   const showProductDetail = (productName: string) => {
     setProductDetail(productName);
   };
-  
 
   return (
     <>
-     
       {productDetail === "" ? (
         <div>
           <div>
+            {" "}
+            <span>{productToShow?.images}</span>
             <h1>Select a products</h1>
           </div>
 
@@ -36,7 +36,7 @@ const Products = () => {
                 >
                   <div className={styles.productInfo}>
                     <Image
-                      // key={index}
+                      key={index}
                       src={product.images}
                       alt={"product" + (index + 1)}
                       width={550}
@@ -53,9 +53,9 @@ const Products = () => {
           </motion.div>
         </div>
       ) : (
-        <div>
-          welcome to my products
-          {JSON.stringify(productToShow, null, 2)}
+        <div className={styles.showProduct}>
+          <h2 className="">{productToShow?.price}</h2>
+          <span>{productToShow?.desc}</span>
         </div>
       )}
     </>
