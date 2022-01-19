@@ -3,11 +3,14 @@
   width: 30rem;
   overflow: hidden;
 }
+
+.productWrap {
+  display: flex;
+}
 .card {
   display: flex;
-  /* box-shadow: -6px 6px 23px 7px rgba(161,143,161,1); */
   cursor: pointer;
-  margin-top: 3rem;
+  margin-right: 3rem;
   background-color: gray;
   padding: 1rem;
   color: white;
@@ -16,5 +19,5 @@
 .productDetails {
   display: flex;
   justify-content: space-between;
- padding-top: 1rem;
+  padding-top: 1rem;
 }
