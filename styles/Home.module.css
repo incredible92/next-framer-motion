@@ -22,12 +22,33 @@
   padding-top: 1rem;
 }
 .showProduct {
-  background-color: gray;
+  background-color: black;
   color: white;
   font-size: 1.2rem;
   font-weight: bold;
-  text-align: center;
-  height: 60vh;
+  height: 70vh;
   border-radius: 10px;
   padding: 2rem;
+}
+.productInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .6rem;
+  margin-bottom: 1.7rem;
+  color: blue;
+}
+.goBack {
+
+  margin-top: 2rem;
+  font-weight: bold;
+  background-color: blue;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 17rem;
+  text-align: center;
+  cursor: pointer;
+}
+.goBack:hover {
+  background-color: rgb(89, 89, 185);
 }

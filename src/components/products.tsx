@@ -1,11 +1,13 @@
 import Link from "next/link";
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 import styles from "../../styles/Home.module.css";
 import { products } from "../utils/product";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 const Products = () => {
+  const router = useRouter();
   const [productDetail, setProductDetail] = useState("");
 
   const productToShow = products.find(
@@ -34,7 +36,7 @@ const Products = () => {
                   className={styles.card}
                   onClick={() => showProductDetail(product.name)}
                 >
-                  <div className={styles.productInfo}>
+                  <div className={styles.productInfo1}>
                     <Image
                       key={index}
                       src={product.images}
@@ -54,8 +56,23 @@ const Products = () => {
         </div>
       ) : (
         <div className={styles.showProduct}>
-          <h2 className="">{productToShow?.price}</h2>
+          <div>
+            <Image
+              src={productToShow.images}
+              alt="displayProduct"
+              width="400"
+              height="250"
+            />
+          </div>
+          <div className={styles.productInfo}>
+            <span className="">{productToShow?.name}</span>
+            <span className="">{productToShow?.price}</span>
+          </div>
+
           <span>{productToShow?.desc}</span>
+          <div className={styles.goBack} onClick={() => setProductDetail("")}>
+            Go back to products
+          </div>
         </div>
       )}
     </>
