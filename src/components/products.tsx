@@ -1,13 +1,11 @@
 import Link from "next/link";
 import React, { useState } from "react";
-import { useRouter } from "next/router";
 import styles from "../../styles/Home.module.css";
 import { products } from "../utils/product";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 const Products = () => {
-  const router = useRouter();
   const [productDetail, setProductDetail] = useState("");
 
   const productToShow = products.find(
@@ -25,7 +23,7 @@ const Products = () => {
           <div>
             {" "}
             <span>{productToShow?.images}</span>
-            <h1>Select a products</h1>
+            <h1>Select a product</h1>
           </div>
 
           <motion.div className={styles.productWrap}>
@@ -56,8 +54,9 @@ const Products = () => {
         </div>
       ) : (
         <div className={styles.showProduct}>
-          <div>
+          <div id={styles.pdtImg}>
             <Image
+            className={styles.productImg}
               src={productToShow.images}
               alt="displayProduct"
               width="400"
