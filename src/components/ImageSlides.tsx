@@ -40,9 +40,10 @@ const ImageSlides = () => {
   return (
     <>
       <div className={styles.slideWrap}>
-        <h1>Product slides</h1>
-        <AnimatePresence initial={false} custom={direction}>
+        <h1 className={styles.slideTitle}>Product slides</h1>
+        <AnimatePresence initial={false} custom={direction} >
           <motion.img
+          className={styles.ImgSlides}
             key={page}
             src={Images[imageIndex]}
             custom={direction}
