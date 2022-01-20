@@ -28,7 +28,7 @@ const variants = {
 const ImageSlides = () => {
   const [[page, direction], setPage] = useState([0, 0]);
 
-  const swipeConfidenceThreshold = 10000;
+  const swipeThreshold = 10000;
   const swipePower = (offset: number, velocity: number) => {
     return Math.abs(offset) * velocity;
   };
@@ -61,9 +61,9 @@ const ImageSlides = () => {
             onDragEnd={(e, { offset, velocity }) => {
               const swipe = swipePower(offset.x, velocity.x);
 
-              if (swipe < -swipeConfidenceThreshold) {
+              if (swipe < -swipeThreshold) {
                 paginate(1);
-              } else if (swipe > swipeConfidenceThreshold) {
+              } else if (swipe > swipeThreshold) {
                 paginate(-1);
               }
             }}
