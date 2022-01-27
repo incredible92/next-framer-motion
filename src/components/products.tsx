@@ -5,12 +5,13 @@ import { products } from "../utils/product";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const Products = () => {
-  const [productDetail, setProductDetail] = useState("");
+const Products = ({productDetail, setProductDetail}: any) => {
+  
 
   const productToShow = products.find(
     (product) => product.name === productDetail
   );
+
 
   const showProductDetail = (productName: string) => {
     setProductDetail(productName);
@@ -57,7 +58,7 @@ const Products = () => {
           <div id={styles.pdtImg}>
             <Image
             className={styles.productImg}
-              src={productToShow.images}
+              src={String(productToShow?.images)}
               alt="displayProduct"
               width="400"
               height="250"

@@ -4,4 +4,5 @@ export const Images = [
   "/images/img3.jpg",
   "/images/img4.jpeg",
   "/images/img5.jpg",
+  "/images/mi.jpg",
 ];
